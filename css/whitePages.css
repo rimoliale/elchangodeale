@@ -1,0 +1,49 @@
+
+
+.site-content{
+    background-color: white !important;
+  }
+  
+ a{
+    color: black;
+  }
+  
+  .filters a:hover {
+    background: #f4c183 !important;
+    color: white !important;
+}
+
+a, .page-title{
+    color: black;
+}
+span.woocommerce-Price-amount.amount{
+	color: black !important;
+}
+.sidebar-main{
+    background-color: white !important;
+  }
+  
+  .widget-title, .widget .wp-block-heading{
+    background-color: white !important;
+	color: black !important;
+  }
+  
+  
+@media (max-width: 768px) {
+.ast-left-sidebar #primary{
+	top: 28px;
+}
+
+.wpc-filters-scroll-container{
+background-color: white !important;
+}
+ .wpc-filters-scroll-container{
+	color: black !important;
+}
+
+
+
+.wpc-filters-widget-containers-wrapper{
+background-color: white !important;
+}
+}
