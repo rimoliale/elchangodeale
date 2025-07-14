@@ -26,11 +26,13 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega,
-			a partir del siguiente día hábil. 
-			Se pueden pactar para entregar en el dia despues de las 18hs ó de 9 a 12hs.
-			Menos de 5km (50 cuadras) envío gratis. 
-			Cualquier Mayor distancia a 5km $5000.`;
+		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega.
+			
+			Se pueden pactar para entregar en el dia despues de las 18hs a 21hs ó de 9 a 12hs.
+			
+			(Contando desde Estaciòn Banfield)
+			Menos de 5km(50 cuadras) envío gratis. 
+			Cualquier Mayor distancia a 5km $1000.`
 
 
     // Aplicar como title (tooltip)
@@ -111,19 +113,19 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 
   });
   
-  
+    // MENU HAMBURGUESA Cierra menú al hacer click en alguna opcion
 setTimeout(() => {
   const toggle = document.getElementById("menu-toggle");
   const sideMenu = document.querySelector(".side-menu");
   const overlay = document.querySelector(".overlay");
 
-  // Cierra el menú al hacer clic en cualquier enlace del menú
+
   sideMenu?.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       toggle.checked = false;
     });
   });
-}, 23); // espera 200ms después de insertar el header
+}, 320); 
 
 if (window.innerWidth < 768) {
   const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');

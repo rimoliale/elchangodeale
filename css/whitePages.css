@@ -1,4 +1,6 @@
-
+.copyright{
+  color: Black !important;
+}
 
 .site-content{
     background-color: white !important;
@@ -27,9 +29,28 @@ span.woocommerce-Price-amount.amount{
     background-color: white !important;
 	color: black !important;
   }
+  html, body{
+    background-color: white !important;
+  }
   
-  
-@media (max-width: 768px) {
+.ast-shop-load-more.active{
+   color: black !important;
+  }
+
+@media (max-width: 768px) 
+html, body{
+    background-color: white !important;
+  }
+
+.ast-shop-load-more.active{
+   color: black !important;
+   padding:0px !important;
+   line-height:1.2em !important;
+  }
+
+	.copyright{
+  color: Black !important;
+}
 .ast-left-sidebar #primary{
 	top: 28px;
 }

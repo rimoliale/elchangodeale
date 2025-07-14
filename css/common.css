@@ -27,9 +27,20 @@
 #main-nav-items:has(.force-visible) #SubirInicio {
   visibility: hidden !important;
 }
+.copyright{
+  color: White !important;
+}
+
 
 @media (max-width: 768px) {
-
+.ast-shop-load-more.active{
+   padding:0px !important;
+   line-height:1.2em !important;
+  }
+  
+.copyright{
+  color: White !important;
+}
 	     .rc-MetatagsWrapper{
     height: 692px !important;
   }

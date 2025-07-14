@@ -26,15 +26,18 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega,
-			a partir del siguiente día hábil. 
+		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega.
+
 			Se entregan días Miércoles y Viernes.(2 días de antelación y antes de las 15hs).
+			Se pueden pactar para entregar en el dia despues de las 18hs a 21hs ó de 9 a 12hs.
 			Ejemplo: 
 			1 - Si se pide un Lunes a las 14:00hs, llega el Miércoles. 
 			2 - Si se pide un Lunes a las 15:00hs ya pasaría a entregarse el Viernes.
 			3 - Si se pide un Mártes, ya pasaría a entregarse el Viernes.
-			Menos de 5km (50 cuadras) y mas de 20 mil pesos, envío gratis, sino $5000.
-			Cualquier Mayor distancia a 5km $5000.`;
+			
+			(Contando desde Estaciòn Banfield)
+			Menos de 5km(50 cuadras) $5000. 
+			Cualquier distancia Mayor a 5km(50 cuadras) $6000.`;
 
 
     // Aplicar como title (tooltip)
