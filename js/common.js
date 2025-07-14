@@ -5,11 +5,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-	const textoQuienesSomos = `Somos el Chango de Rimo y estamos para satisfacer,
-	de los cuales nos hemos puesto de acuerdo para consolidar una unión en beneficio del cliente particular,
-	para satisfacer las necesidades en la compra de productos cotidianos, 
-	desde el armado del paquete en el depósito hasta la llegada final al hogar. 
-	Fundada y gestionada por Alejandro D Rimoli.`;
+const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la venta de productos cotidianos de forma personalzada hasta la llegada a su puerta y gestionada por Alejandro D Rimoli`;
 
     // Aplicar como title (tooltip)
     const btnQuienesSomos = document.getElementById("InfoQuienesSomos-Barra");
@@ -67,7 +63,8 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	const textoComoComprar = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
-	- Horario de Atenciòn: De 9 a 20hs.`;
+	- Horario de Atenciòn: De 9 a 20hs.
+	- Compra mìnima $28000.`;
 
     // Aplicar como title (tooltip)
     const btnComoComprar = document.getElementById("InfoComoComprar-Barra");
