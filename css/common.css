@@ -20,8 +20,8 @@
   font-display: swap;
 }
 
-#spinner {
- position: fixed;
+#spinner{
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -35,10 +35,11 @@
 }
 
 .spinner-container {
-  width: 120px;
-  height: 120px;
-  animation: spin-loop 2.5s infinite ease-in-out;
-  perspective: 1000px;
+  width: 150px;
+  height: 150px;
+  animation: spin-alt-axes 3s infinite ease-in-out;
+  perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
 #spinner-img {
@@ -48,12 +49,15 @@
   transform-style: preserve-3d;
 }
 
-@keyframes spin-loop {
-  0%   { transform: rotateY(0deg); }
-  40%  { transform: rotateY(180deg); }
-  60%  { transform: rotateY(180deg); }
-  100% { transform: rotateY(180deg) rotateX(180deg); }
+
+@keyframes spin-alt-axes {
+  0%   { transform: rotateY(0deg) rotateX(0deg); }
+  25%  { transform: rotateY(180deg) rotateX(0deg); }
+  50%  { transform: rotateY(0deg) rotateX(0deg); }
+  75%  { transform: rotateY(0deg) rotateX(180deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
 }
+
 
 
 

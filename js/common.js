@@ -82,7 +82,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-	
+	setAppReady();
 	
 	  document.addEventListener("DOMContentLoaded", function () {
   
