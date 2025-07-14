@@ -118,7 +118,7 @@ setTimeout(() => {
       toggle.checked = false;
     });
   });
-}, 320); 
+}, 380); 
 
 if (window.innerWidth < 768) {
   const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
