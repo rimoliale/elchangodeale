@@ -5,7 +5,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-	const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la venta de productos cotidianos de forma personalzada hasta la llegada a su puerta y gestionada por Alejandro D Rimoli`;
+	const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la venta de productos cotidianos de forma personalzada hasta la llegada a su puerta, fundada y gestionada por Alejandro D Rimoli`;
 
     // Aplicar como title (tooltip)
     const btnQuienesSomos = document.getElementById("InfoQuienesSomos-Barra");

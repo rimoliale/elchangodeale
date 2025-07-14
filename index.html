@@ -272,7 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		cssLink3.href = "css/whitePages.css";
 		document.head.appendChild(cssLink3);
 		
-		setAppReady();
+							setTimeout(() => {
+									  setAppReady()
+									}, 320);
       };
       document.body.appendChild(bootstrapScript);
     });

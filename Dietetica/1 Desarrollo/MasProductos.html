@@ -2830,7 +2830,9 @@ function gtag(){}gtag('js', new Date());
 					cssLink2.href = "../../css/whitePages.css";
 					document.head.appendChild(cssLink2);
 					
-					setAppReady();
+										setTimeout(() => {
+									  setAppReady()
+									}, 320);
 					
 					// Clonamos el menú principal al menú mobile
 						const mainNav = document.getElementById("main-nav-items");
