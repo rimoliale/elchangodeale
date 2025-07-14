@@ -2825,11 +2825,6 @@ function gtag(){}gtag('js', new Date());
 				  const script2 = document.createElement("script");
 				  script2.src = "../../js/common.js";
 				  script2.onload = () => {
-					const cssLink = document.createElement("link");
-					cssLink.rel = "stylesheet";
-					cssLink.href = "../../css/common-productos-confiltros.css";
-					document.head.appendChild(cssLink);
-					
 					const cssLink2 = document.createElement("link");
 					cssLink2.rel = "stylesheet";
 					cssLink2.href = "../../css/common-productos-sinfiltros.css";
@@ -2839,6 +2834,8 @@ function gtag(){}gtag('js', new Date());
 					cssLink3.rel = "stylesheet";
 					cssLink3.href = "../../css/whitePages.css";
 					document.head.appendChild(cssLink3);
+					
+					setAppReady();
 					
 					// Clonamos el menú principal al menú mobile
 						const mainNav = document.getElementById("main-nav-items");

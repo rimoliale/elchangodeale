@@ -94,10 +94,6 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
     const parrafoComoComprar = document.getElementById("contenidoComoComprar");
     parrafoComoComprar.innerText = textoComoComprar;
 	
-	
-	
-	setAppReady();
-	
 	  document.addEventListener("DOMContentLoaded", function () {
   
 

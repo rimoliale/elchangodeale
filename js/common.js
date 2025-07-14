@@ -80,10 +80,6 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
     const parrafoComoComprar = document.getElementById("contenidoComoComprar");
     parrafoComoComprar.innerText = textoComoComprar;
 	
-	
-	
-	setAppReady();
-	
 	  document.addEventListener("DOMContentLoaded", function () {
   
 
@@ -137,6 +133,7 @@ if (window.innerWidth < 768) {
     }
     el.removeAttribute("data-bs-toggle");
     el.removeAttribute("title");
+	console.log('1');
   });
 }
 

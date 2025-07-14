@@ -2775,7 +2775,21 @@ function gtag(){}gtag('js', new Date());
 
   
 
+<div id="spinner">
+  <div class="spinner-container">
+    <img src="../../images/Logo Mono CARA CON NOMBRE 3.png" alt="Loading" id="spinner-img" />
+  </div>
+</div>
+
+
 <script>
+  function setAppReady() {
+    const spinner = document.getElementById("spinner");
+    spinner.style.opacity = "0";
+    spinner.style.transition = "opacity 0.5s ease";
+    setTimeout(() => spinner.style.display = "none", 500);
+  }
+  
   document.addEventListener("DOMContentLoaded", function () {
     // Paso 1: cargar filtros y productos en paralelo
 	    // Paso 1: cargar filtros y productos en paralelo
@@ -2829,6 +2843,8 @@ function gtag(){}gtag('js', new Date());
 					cssLink3.href = "../../css/whitePages.css";
 					document.head.appendChild(cssLink3);
 					
+					setAppReady();
+					
 					// Clonamos el menú principal al menú mobile
 						const mainNav = document.getElementById("main-nav-items");
 						const mobileMenu = document.getElementById("mobile-clone");
@@ -2847,7 +2863,7 @@ function gtag(){}gtag('js', new Date());
 				  document.body.appendChild(script2);
 				  
 				  DOMContentLoadedPOSTA();
-				  
+				  console.log('3');
 
 				};
 				document.body.appendChild(script);
