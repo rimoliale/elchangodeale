@@ -134,7 +134,7 @@ setTimeout(() => {
       toggle.checked = false;
     });
   });
-}, 23); // espera 200ms después de insertar el header
+}, 320); // espera 200ms después de insertar el header
 
 if (window.innerWidth < 768) {
   const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');

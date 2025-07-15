@@ -891,8 +891,7 @@ li {
 /* Esta clase es barra superior */
 .css-1nuilh8{
   height: 28px !important;
-  position: relative !important;
-  top: 0 !important;
+  position: fixed !important;
   width: 100% !important;
   z-index: 10000 !important;
   background-color:#82441e;

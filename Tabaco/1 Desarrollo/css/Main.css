@@ -36,14 +36,6 @@ li {
   list-style: none; /*quitar marker */
 }
 
-.css-1nuilh8{
-  height: 58px;/* Esta clase es barra superior */
-  position: fixed !important;
-  top: 0 !important;
-  width: 100% !important;
-  z-index: 10000 !important;
-  background-color:#82441e;
-}
 
 .header_top{
   padding-top: 38px;
