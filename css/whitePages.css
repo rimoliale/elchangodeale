@@ -37,11 +37,18 @@ span.woocommerce-Price-amount.amount{
    color: black !important;
   }
 
+.woocommerce.archive ul.products li a.button{
+   color: white !important;
+   background-color:black !important;
+  }
 @media (max-width: 768px) 
 html, body{
     background-color: white !important;
   }
-
+.woocommerce.archive ul.products li a.button{
+   color: white !important;
+   background-color:black !important;
+  }
 .ast-shop-load-more.active{
    color: black !important;
    padding:0px !important;
