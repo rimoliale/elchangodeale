@@ -22,13 +22,18 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 	
 	
 	
-		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega.
+		    const textoEnvio =`Se realiza el pedido mediante Whatsapp en el horario mencionado en la sección "Contacto".
+			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 			
-			Se pueden pactar para entregar en el dia despues de las 18hs a 21hs ó de 9 a 12hs.
+			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
 			
+			Se arman los pedidos de Lunes a Viernes hasta las 15:00hs, por lo que el pedido confirmado ántes, puede entregarse el mismo día).
+			
+			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
-			Menos de 5km(50 cuadras) envío gratis. 
-			Cualquier Mayor distancia a 5km $1000.`
+			- Menos de 5km(50 cuadras) envío gratis. 
+			- Cualquier Mayor distancia a 5km $1000.			
+			- Compra mìnima: $28000.`
 
 
     // Aplicar como title (tooltip)
@@ -41,6 +46,10 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
     // Aplicar como contenido de <p>
     const parrafoEnvio = document.getElementById("contenidoEnvios");
     parrafoEnvio.innerText = textoEnvio;
+	
+	
+	
+	
 	
 	
 	
@@ -62,20 +71,20 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 
 	
 	
-	const textoComoComprar = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
-	- Horario de Atenciòn: De 9 a 20hs.
-	- Compra mìnima $28000.`;
+	const textoContacto = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
+	- Horario de Atención: De 9 a 21hs.`;
+
 
     // Aplicar como title (tooltip)
-    const btnComoComprar = document.getElementById("InfoComoComprar-Barra");
-    btnComoComprar.setAttribute("title", textoComoComprar);
+    const btnComoComprar = document.getElementById("InfoContacto-Barra");
+    btnComoComprar.setAttribute("title", textoContacto);
 
     // Activar Bootstrap tooltip
     new bootstrap.Tooltip(btnComoComprar);
 
     // Aplicar como contenido de <p>
-    const parrafoComoComprar = document.getElementById("contenidoComoComprar");
-    parrafoComoComprar.innerText = textoComoComprar;
+    const parrafoContacto = document.getElementById("contenidoContacto");
+    parrafoContacto.innerText = textoContacto;
 	
 	  document.addEventListener("DOMContentLoaded", function () {
   

@@ -22,27 +22,40 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-		    const textoEnvio = `Los pedidos confirmados antes de las 15hs los días hábiles son armados en el momento y programados para la entrega, según corresponda el tipo de producto. 
+		    const textoEnvio = `Se realiza el pedido mediante Whatsapp en el horario mencionado en la sección "Contacto".
+			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 			
 			Tabaco:
-			Se entregan días Miércoles y Viernes.(2 días de antelación y antes de las 15hs).
-			Se pueden pactar para entregar en el dia despues de las 18hs a 21hs ó de 9 a 12hs.
-			Ejemplo: 
-			1 - Si se pide un Lunes a las 14:00hs, llega el Miércoles. 
-			2 - Si se pide un Lunes a las 15:00hs ya pasaría a entregarse el Viernes.
-			3 - Si se pide un Mártes, ya pasaría a entregarse el Viernes.
 			
+			Horario de Entrega: 
+			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs.	
+			
+			Se arman los pedidos de Miércoles 15:01hs a Lunes hasta 15:00hs, listo para entregarse el Miércoles, y de Lunes 15:01 a Miercoles 15hs, listo para entregarse el Viernes, por lo que la velocidad de entrega depende, de el horario en el que se arman los pedidos y el momento en el que se confirma el pedido solicitado(Máxima velocidad de entrega de pedido, desde que se confirma: 2 días).
+			Ejemplo: 
+			1 - Se confrima pedido un Lunes a las 14:00hs, llega el Miércoles(Ejemplo de Máxima velocidad de entrega del pedido, desde que se confirma). 
+			2 - Se confrima pedido un Lunes a las 15:01hs ya pasaría a entregarse el Viernes.
+			3 - Se confrima pedido un Mártes, ya pasaría a entregarse el Viernes.
+			
+			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
-			Menos de 5km(50 cuadras) $5000. 
-			Cualquier distancia Mayor a 5km(50 cuadras) $6000.
+			- Menos de 5km(50 cuadras) $5000. 
+			- Cualquier distancia Mayor a 5km(50 cuadras) $6000.
+			- Compra mìnima: SIN LIMITES.
+			
 			
 			
 			Demás Productos:
-			Se pueden pactar para entregar en el dia despues de las 18hs a 21hs ó de 9 a 12hs.
 			
+			Horario de Entrega: 
+			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
+			
+			Se arman los pedidos de Lunes a Viernes hasta las 15:00hs, por lo que el pedido confirmado ántes, puede entregarse el mismo día).
+			
+			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
-			Menos de 5km(50 cuadras) envío gratis. 
-			Cualquier Mayor distancia a 5km $1000.`;
+			- Menos de 5km(50 cuadras) envío gratis. 
+			- Cualquier Mayor distancia a 5km $1000.			
+			- Compra mìnima: $28000.`
 
 
     // Aplicar como title (tooltip)
@@ -76,26 +89,25 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 
 	
 	
-	const textoComoComprar = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
-	- Horario de Atenciòn: De 9 a 20hs
-	
-	Compra mínima:
-	Tábaco:
-		No hay.
-		
-	Otros productos:
-		Compra mìnima $28000.`;
+	const textoContacto = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
+	- Horario de Atención: De 9 a 21hs.`;
+
 
     // Aplicar como title (tooltip)
-    const btnComoComprar = document.getElementById("InfoComoComprar-Barra");
-    btnComoComprar.setAttribute("title", textoComoComprar);
+    const btnComoComprar = document.getElementById("InfoContacto-Barra");
+    btnComoComprar.setAttribute("title", textoContacto);
 
     // Activar Bootstrap tooltip
     new bootstrap.Tooltip(btnComoComprar);
 
     // Aplicar como contenido de <p>
-    const parrafoComoComprar = document.getElementById("contenidoComoComprar");
-    parrafoComoComprar.innerText = textoComoComprar;
+    const parrafoContacto = document.getElementById("contenidoContacto");
+    parrafoContacto.innerText = textoContacto;
+	
+	
+	
+	
+	
 	
 	  document.addEventListener("DOMContentLoaded", function () {
   
@@ -153,7 +165,7 @@ if (window.innerWidth < 768) {
   });
 }
 
-$('#InfoQuienesSomos-Barra, #InfoEnvios-Barra, #InfoFormasPago-Barra, #InfoComoComprar-Barra').on('click', function () {
+$('#InfoQuienesSomos-Barra, #InfoEnvios-Barra, #InfoFormasPago-Barra, #InfoContacto-Barra').on('click', function () {
   $('.css-1nuilh8').removeClass('force-visible');
 });
 
