@@ -2841,7 +2841,9 @@ function gtag(){}gtag('js', new Date());
 					cssLink3.href = "css/tabaco.css";
 					document.head.appendChild(cssLink3);
 					
-					setAppReady();
+										setTimeout(() => {
+									  setAppReady()
+									}, 380);
 					
 					// Clonamos el menú principal al menú mobile
 						const mainNav = document.getElementById("main-nav-items");
