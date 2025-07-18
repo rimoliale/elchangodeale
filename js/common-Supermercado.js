@@ -24,7 +24,8 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 	
 		    const textoEnvio =`Se realiza el pedido mediante Whatsapp en el horario mencionado en la sección "Contacto".
 			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
-			
+				
+			Horario de Entrega: 
 			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
 			
 			Se arman los pedidos de Lunes a Viernes hasta las 15:00hs, por lo que el pedido confirmado ántes, puede entregarse el mismo día).
@@ -32,7 +33,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
-			- Cualquier Mayor distancia Consultar.			
+			- Cualquier Mayor distancia a Consultar.			
 			- Compra mìnima: $28000.`
 
 

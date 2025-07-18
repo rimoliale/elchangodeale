@@ -21,7 +21,7 @@
 
 <link rel="icon" type="image/png" href="../../images/Logo FavIcon Mono 6.png" sizes="128x128">
 
-<title>Anteojos - El Chango de Ale</title>
+<title>Limpieza - Supermacdo - El Chango de Ale</title>
 
 
 
@@ -2763,7 +2763,7 @@ function gtag(){}gtag('js', new Date());
   
   <!-- jQuery y Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <!-- <script src="../../js/functions-general.js"></script> -->
 
    
@@ -2793,7 +2793,7 @@ function gtag(){}gtag('js', new Date());
     // Paso 1: cargar filtros y productos en paralelo
 
 
-    const cargarProductos = fetch("Anteojos-Productos.html")
+    const cargarProductos = fetch("Galletitas-Productos.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("primary").innerHTML = data;
@@ -2819,49 +2819,53 @@ function gtag(){}gtag('js', new Date());
             const bootstrapScript = document.createElement("script");
             bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
             bootstrapScript.onload = () => {
-			 const script = document.createElement("script");
-				script.src = "../../js/functions-general.js";
-				script.onload = () => {
-				  const script2 = document.createElement("script");
-				  script2.src = "../../js/common-Anteojos.js";
-				  script2.onload = () => {
-					
-					const cssLink2 = document.createElement("link");
-					cssLink2.rel = "stylesheet";
-					cssLink2.href = "../../css/common-productos-sinfiltros.css";
-					document.head.appendChild(cssLink2);
-					
-					const cssLink3 = document.createElement("link");
-					cssLink3.rel = "stylesheet";
-					cssLink3.href = "../../css/whitePages.css";
-					document.head.appendChild(cssLink3);
-					
-										setTimeout(() => {
-									  setAppReady()
-									}, 380);
-					
-					// Clonamos el menú principal al menú mobile
-						const mainNav = document.getElementById("main-nav-items");
-						const mobileMenu = document.getElementById("mobile-clone");
+				const scriptProductosLoader = document.createElement("script");
+				scriptProductosLoader.src = "js/galletitas-loader.js";
+				scriptProductosLoader.onload = () => {
+					const script = document.createElement("script");
+						script.src = "../../js/functions-general.js";
+						script.onload = () => {
+						const script2 = document.createElement("script");
+						script2.src = "../../js/common-Supermercado.js";
+						script2.onload = () => {
+							const cssLink = document.createElement("link");
+							cssLink.rel = "stylesheet";
+							cssLink.href = "../../css/common-productos-sinfiltros.css";
+							document.head.appendChild(cssLink);
+							
+							const cssLink2 = document.createElement("link");
+							cssLink2.rel = "stylesheet";
+							cssLink2.href = "../../css/whitePages.css";
+							document.head.appendChild(cssLink2);
+							
+							setTimeout(() => {
+											setAppReady()
+											}, 380);
+							
+							// Clonamos el menú principal al menú mobile
+								const mainNav = document.getElementById("main-nav-items");
+								const mobileMenu = document.getElementById("mobile-clone");
 
-						if (mainNav && mobileMenu) {
-						  const clonedItems = Array.from(mainNav.children).map(item => item.cloneNode(true));
-						  clonedItems.forEach(li => mobileMenu.appendChild(li));
-						}
+								if (mainNav && mobileMenu) {
+								const clonedItems = Array.from(mainNav.children).map(item => item.cloneNode(true));
+								clonedItems.forEach(li => mobileMenu.appendChild(li));
+								}
 
-						// Inicializamos tooltips SOLO después de que header + menú están cargados
-						const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
-						tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-						  new bootstrap.Tooltip(tooltipTriggerEl);
-						});
-				  };
-				  document.body.appendChild(script2);
-				  
-				  DOMContentLoadedPOSTA();
-				  
+								// Inicializamos tooltips SOLO después de que header + menú están cargados
+								const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
+								tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+								new bootstrap.Tooltip(tooltipTriggerEl);
+								});
+						};
+						document.body.appendChild(script2);
+						
+						DOMContentLoadedPOSTA();
+						
 
+					};
+					document.body.appendChild(script);
 				};
-				document.body.appendChild(script);
+				document.body.appendChild(scriptProductosLoader);
             };
             document.body.appendChild(bootstrapScript);
 			

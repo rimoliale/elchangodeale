@@ -26,7 +26,6 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 			
 			Tabaco:
-			
 			Horario de Entrega: 
 			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs.	
 			
@@ -39,13 +38,12 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) $5000. 
-			- Cualquier distancia Mayor a 5km(50 cuadras) $6000.
-			- Compra mìnima: SIN LIMITES.
+			- Cualquier distancia Mayor a Consultar.
+			- Compra mìnima: SIN LÍMITE.
 			
 			
 			
-			Demás Productos:
-			
+      Diétetica:
 			Horario de Entrega: 
 			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
 			
@@ -54,7 +52,21 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
-			- Cualquier Mayor distancia a 5km $1000.			
+			- Cualquier Mayor distancia Consultar.			
+			- Compra mìnima: SIN LÍMITE.
+
+
+
+			Supermercado:
+			Horario de Entrega: 
+			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
+			
+			Se arman los pedidos de Lunes a Viernes hasta las 15:00hs, por lo que el pedido confirmado ántes, puede entregarse el mismo día).
+			
+			Alcance y Costo de Envio:
+			(Contando desde Estaciòn Banfield)
+			- Menos de 5km(50 cuadras) envío gratis. 
+			- Cualquier Mayor distancia a Consultar.			
 			- Compra mìnima: $28000.`
 
 
