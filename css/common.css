@@ -120,7 +120,7 @@ section p, section li{
   font-size: 18px !important;
 }
 .css-1c9q47y{
-  height: 490px !important;
+  height: auto !important;
   margin-bottom: -8px !important;
 }
 
@@ -243,6 +243,7 @@ position: fixed;
 
   .row .productos-row{
 	height: 408px !important;
+  flex-wrap: wrap !important;
   }
 
   .rc-CollectionsContainer .col-md-6,
