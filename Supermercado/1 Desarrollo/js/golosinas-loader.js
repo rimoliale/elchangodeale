@@ -2,7 +2,7 @@
 const rutaPDF = 'Recursos/BD/GOLOSINAS L2.pdf'; // archivo fijo
 
 (async function () {
-  const imagenDefault = 'images/generic-product.jpg';
+  const imagenDefault = 'images/Golosinas-2.jpg';
 
   function procesarTexto(texto) {
   const productos = [];
@@ -83,13 +83,13 @@ async function leerPDF() {
     }
 
     // Cortar desde donde empieza "LIMPIEZA"
-    const inicio = texto.indexOf('LIMPIEZA');
+    const inicio = texto.indexOf('GOLOSINAS');
     if (inicio > -1) {
       texto = texto.slice(inicio);
     }
 
         // Eliminar "LIMPIEZA DESBUL" si aparece en la primera línea
-    texto = texto.replace(/^LIMPIEZA\s+DES\s+BUL\s*/i, '');
+    texto = texto.replace(/^GOLOSINAS\s+DES\s+BUL\s*/i, '');
 
     return texto;
   } catch (err) {

@@ -2,7 +2,7 @@
 const rutaPDF = 'Recursos/BD/GALLETITAS L2.pdf'; // archivo fijo
 
 (async function () {
-  const imagenDefault = 'images/generic-product.jpg';
+  const imagenDefault = 'images/Galletitas.png';
 
   function procesarTexto(texto) {
   const productos = [];

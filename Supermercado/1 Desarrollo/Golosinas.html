@@ -2793,7 +2793,7 @@ function gtag(){}gtag('js', new Date());
     // Paso 1: cargar filtros y productos en paralelo
 
 
-    const cargarProductos = fetch("Limpieza-Productos.html")
+    const cargarProductos = fetch("Golosinas-Productos.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("primary").innerHTML = data;
@@ -2820,7 +2820,7 @@ function gtag(){}gtag('js', new Date());
             bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
             bootstrapScript.onload = () => {
 				const scriptProductosLoader = document.createElement("script");
-				scriptProductosLoader.src = "js/productos-loader.js";
+				scriptProductosLoader.src = "js/golosinas-loader.js";
 				scriptProductosLoader.onload = () => {
 					const script = document.createElement("script");
 						script.src = "../../js/functions-general.js";

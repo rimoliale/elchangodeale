@@ -2,7 +2,7 @@
 const rutaPDF = 'Recursos/BD/CELIACOS L2.pdf'; // archivo fijo
 
 (async function () {
-  const imagenDefault = 'images/generic-product.jpg';
+  const imagenDefault = 'images/Celiacos.jpg';
 
   function procesarTexto(texto) {
   const productos = [];
