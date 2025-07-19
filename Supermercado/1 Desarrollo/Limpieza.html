@@ -2797,6 +2797,7 @@ function gtag(){}gtag('js', new Date());
       .then(res => res.text())
       .then(data => {
         document.getElementById("primary").innerHTML = data;
+		  BuscadorProductos(); // 👈 acá
       });
 
     // Paso 2: cuando ambos estén cargados
