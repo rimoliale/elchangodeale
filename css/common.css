@@ -65,10 +65,6 @@
 #mobile-menu {
   display: block !important;
 }
-
-#main-nav-items:has(.force-visible) #SubirInicio {
-  visibility: hidden !important;
-}
 .copyright{
   color: White !important;
 }
@@ -87,7 +83,7 @@
   color: White !important;
 }
 	     .rc-MetatagsWrapper{
-    height: 692px !important;
+    height: auto !important;
   }
   .section-card{
     height: auto !important;
@@ -218,7 +214,7 @@ position: fixed;
   
    /* Contenedor principal ocupa toda la pantalla y permite scroll si se necesita */
   .rc-CollectionsContainer .container {
-    min-height: 100vh !important;
+    height: auto !important;
     display: flex !important;
     flex-direction: column;
     padding: 0 !important;
@@ -294,7 +290,7 @@ position: fixed;
 
   /* Ajustar altura del contenedor de imagen */
   .rc-CollectionsContainer{
-    height: 68px !important;
+    height: auto !important;
     
   }
 
@@ -913,6 +909,9 @@ li {
 /* cada opcion boton de barra superior 2-2*/
 .css-1dswftd{
 	display: block;
+    text-align: center !important;
+    background: transparent !important;
+    padding: 10px 0 !important;
 }
 
 .header_top{

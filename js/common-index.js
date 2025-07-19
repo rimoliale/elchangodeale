@@ -115,40 +115,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
     // Aplicar como contenido de <p>
     const parrafoContacto = document.getElementById("contenidoContacto");
     parrafoContacto.innerText = textoContacto;
-	
-	
-	
-	
-	
-	
-	  document.addEventListener("DOMContentLoaded", function () {
-  
 
-  
-    const mainNav = document.getElementById("main-nav-items");
-    const mobileMenu = document.getElementById("mobile-clone");
-
-    if (mainNav && mobileMenu) {
-      // Clona solo los <li>, no el <ul>
-      const items = mainNav.querySelectorAll("li");
-      items.forEach(item => {
-        mobileMenu.appendChild(item.cloneNode(true));
-      });
-    }
-	
-	  if (window.innerWidth >= 768) {
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-      new bootstrap.Tooltip(tooltipTriggerEl);
-	  
-	  
-    });
-  }
-  
-  	  
-
-		
-  });
   
   
 setTimeout(() => {
@@ -178,9 +145,9 @@ if (window.innerWidth < 768) {
 }
 
 $('#InfoQuienesSomos-Barra, #InfoEnvios-Barra, #InfoFormasPago-Barra, #InfoContacto-Barra').on('click', function () {
-  $('.css-1nuilh8').removeClass('force-visible');
+  $('.force-visible').removeClass('force-visible');
 });
 
 $(document).on('click', '#SubirInicio', function () {
-  $('.css-1nuilh8').addClass('force-visible');
+  $('.force-visible').addClass('force-visible');
 });

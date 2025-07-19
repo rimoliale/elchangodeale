@@ -276,13 +276,18 @@ $("#checkedDeseleccionar").on("change", function () {
 	}
 
 
-function BuscadorProductos() {
+function BuscadorProductos(intentos = 0) {
   const searchInput = document.getElementById('search');
   const searchButton = document.querySelector('.icon');
   const productos = document.querySelectorAll('ul.products li.product');
 
-  if (!searchInput || !searchButton) {
-    setTimeout(inicializarBuscadorCuandoEsteListo, 100); // vuelve a intentar en 100ms
+  if (!searchInput || !searchButton || productos.length === 0) {
+    if (intentos < 20) {
+      console.log("⏳ Esperando DOM para inicializar buscador...");
+      setTimeout(() => BuscadorProductos(intentos + 1), 200); // reintenta cada 200ms
+    } else {
+      console.warn("⚠️ No se pudo inicializar el buscador luego de varios intentos.");
+    }
     return;
   }
 
@@ -301,12 +306,8 @@ function BuscadorProductos() {
       }
     });
 
-    $(".woocommerce-result-count").text("Mostrando " + productosVisibles + " de " + productos.length + " Productos");
-	
-	
-	
-	$("#checkedDeseleccionar").prop("checked", false).prop("disabled", false);
-
+    $(".woocommerce-result-count").text(`Mostrando ${productosVisibles} de ${productos.length} Productos`);
+    $("#checkedDeseleccionar").prop("checked", false).prop("disabled", false);
   }
 
   searchInput.addEventListener('keypress', function (e) {
@@ -320,6 +321,8 @@ function BuscadorProductos() {
     e.preventDefault();
     filtrarPorBuscador();
   });
+
+  console.log("✅ Buscador inicializado correctamente.");
 }
 
 // document.addEventListener('DOMContentLoaded', inicializarBuscadorCuandoEsteListo);
