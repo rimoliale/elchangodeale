@@ -242,7 +242,6 @@ position: fixed;
   
 
   .row .productos-row{
-	height: 408px !important;
   flex-wrap: wrap !important;
   }
 
@@ -252,8 +251,9 @@ position: fixed;
   .rc-CollectionsContainer .col-12 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
+    padding: 0px 5px !important;
+    margin: 3px auto !important;
+    height: 132px;
   }
 
   /* Ajuste a tarjetas */
