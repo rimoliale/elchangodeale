@@ -2818,7 +2818,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!primary) return console.error("❌ No se encontró #primary");
 
   // Paso 1: cargar filtros y productos en paralelo
-  const cargarProductos = fetch("frutos-secos-Productos.html")
+  const cargarProductos = fetch("frutos-secos-productos.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("primary").innerHTML = data;
