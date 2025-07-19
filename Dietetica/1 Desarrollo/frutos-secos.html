@@ -2810,6 +2810,8 @@ function formatearPrecio(precioRaw) {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
+  let subProducto="Frutos Secos";
+  let categoriaEnDB = "FRUTOS SECOS";
   console.log("📍 frutos-secos.html iniciado");
 
   const primary = await esperarElemento("#primary");
@@ -2844,7 +2846,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           script.src = "../../js/functions-general.js";
           script.onload = () => {
             const script2 = document.createElement("script");
-            script2.src = "../../js/common-Supermercado.js";
+            script2.src = "../../js/common-dietetica.js";
             script2.onload = () => {
               document.head.insertAdjacentHTML("beforeend", `
                 <link rel="stylesheet" href="../../css/common-productos-sinfiltros.css">
@@ -2888,12 +2890,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   const productos = JSON.parse(raw);
 
   // 🧠 Detectar categoría desde nombre archivo
-  const categoria = location.pathname.split('/').pop()
+ /* const categoria = location.pathname.split('/').pop()
     .replace(".html", "")
     .replace("-productos", "")
     .replace(/-/g, " ")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .toUpperCase();
+*/
+  	const categoria = categoriaEnDB;
+	//console.log(categoriaEnDB);
 
   const filtrados = productos.filter(p =>
     p.categoria &&
@@ -2913,7 +2918,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     li.className = "ast-col-sm-12 ast-article-post desktop-align-center tablet-align-center mobile-align-center ast-col-md-6 ast-product-gallery-layout-horizontal ast-product-single-variable ast-product-tabs-layout-horizontal product type-product post-10000 status-publish instock has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes";
 
     const precio = formatearPrecio(prod.precio);
-    const imagen = "../../images/Dietetica/placeholder.jpg";
+    const imagen = "images/productos-generica.png";
 
     li.innerHTML = `
       <div class="astra-shop-thumbnail-wrap">
@@ -2923,8 +2928,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
       <input type="hidden" class="wpmProductId" data-id="10000">
       <div class="astra-shop-summary-wrap">
-        <span class="ast-woo-product-category">${prod.categoria}</span>
-        <a class="ast-loop-product__link"><h2 class="woocommerce-loop-product__title">${prod.producto}</h2></a>
+        <span class="ast-woo-product-category">${subProducto}</span>
+        <a class="ast-loop-product__link"><h2 class="woocommerce-loop-product__title">
+  ${prod.producto}<br>${prod.presentacion?.toLowerCase() || ""}
+</h2></a>
         <span class="price">
           <div class="price">
             <label for="alg_wc_msrp"></label>
