@@ -189,8 +189,6 @@ function  DOMContentLoadedPOSTA() {
 			}
 			parent.removeChild(link);
 		});	
-		
-		BuscadorProductos();
 	}
 
 
@@ -290,6 +288,7 @@ function BuscadorProductos(intentos = 0) {
     }
     return;
   }
+
 
   function filtrarPorBuscador() {
     const searchTerm = searchInput.value.toLowerCase().trim();

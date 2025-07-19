@@ -21,7 +21,7 @@
 
 <link rel="icon" type="image/png" href="../../images/Logo FavIcon Mono 6.png" sizes="128x128">
 
-<title>Dietética - El Chango de Ale</title>
+<title>Dietetica - El Chango de Ale</title>
 
 
 
@@ -2748,6 +2748,7 @@ function gtag(){}gtag('js', new Date());
 	
 <div id="content" class="site-content">
 	<div class="ast-container">
+	
 
 
 <div id="primary" class="content-area primary">
@@ -2761,9 +2762,11 @@ function gtag(){}gtag('js', new Date());
 <div id="footer"></div>
   
   <!-- jQuery y Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <!-- <script src="../../js/functions-general.js"></script> -->
+
+   
     <!-- jQuery y Bootstrap JS -->
 	
 <template id="tmpl-age-gate"></template> 
@@ -2785,7 +2788,7 @@ function gtag(){}gtag('js', new Date());
     spinner.style.transition = "opacity 0.5s ease";
     setTimeout(() => spinner.style.display = "none", 500);
   }
-
+  
   document.addEventListener("DOMContentLoaded", function () {
     // Paso 1: cargar filtros y productos en paralelo
 
@@ -2820,9 +2823,8 @@ function gtag(){}gtag('js', new Date());
 				script.src = "../../js/functions-general.js";
 				script.onload = () => {
 				  const script2 = document.createElement("script");
-				  script2.src = "../../js/common-Supermercado.js";
+				  script2.src = "../../js/common.js";
 				  script2.onload = () => {
-					
 					const cssLink2 = document.createElement("link");
 					cssLink2.rel = "stylesheet";
 					cssLink2.href = "../../css/common-productos-sinfiltros.css";
@@ -2866,54 +2868,9 @@ function gtag(){}gtag('js', new Date());
       }, 100); // Delay opcional tras cargar filtros y productos
     });
   });
-
-
-async function cargarExcelYGuardar() {
-  try {
-    const res = await fetch("Recursos/MecohueDB.xlsx");
-    const buffer = await res.arrayBuffer();
-    const workbook = XLSX.read(buffer, { type: "array" });
-    const hoja = workbook.Sheets[workbook.SheetNames[0]];
-
-    const raw = XLSX.utils.sheet_to_json(hoja, { header: 1 }); // Leer como arrays
-    let categoriaActual = "";
-    const productos = [];
-
-    for (const row of raw) {
-      const colC = row[2]; // Columna C → Producto o Categoría
-      const colD = row[3]; // Columna D → Presentación
-      const colE = row[4]; // Columna E → Precio
-
-      // Si hay valor en C pero nada en D ni E → Categoría
-      if (typeof colC === "string" && !colD && !colE) {
-        categoriaActual = colC.trim();
-        continue;
-      }
-
-      // Si hay producto y precio → entrada válida
-      if (colC && colE) {
-        productos.push({
-          categoria: categoriaActual,
-          producto: colC.toString().trim(),
-          presentacion: (colD || "").toString().trim(),
-          precio: colE.toString().trim()
-        });
-      }
-    }
-
-    console.log("✅ Productos procesados:", productos);
-    localStorage.setItem("productosMecohue", JSON.stringify(productos));
-
-    const msg = document.createElement("div");
-    msg.innerHTML = `<p style="padding:1rem;color:green;">📦 ${productos.length} productos cargados al localStorage</p>`;
-    document.body.appendChild(msg);
-
-  } catch (err) {
-    console.error("❌ Error al cargar Excel:", err);
-    alert("No se pudo cargar el archivo MecohueDB.xlsx");
-  }
-}
-
-document.addEventListener("DOMContentLoaded", cargarExcelYGuardar);
 </script>
+
+
+
+
 </body></html>
