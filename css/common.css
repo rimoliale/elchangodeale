@@ -69,8 +69,24 @@
   color: White !important;
 }
 
+  /* Ajustar altura del contenedor de imagen */
+  .rc-CollectionsContainer{
+    height: auto !important;
+    background-color: #f4c183;
+    border-radius: 18px;
+  }
 
 @media (max-width: 768px) {
+  .col-5, .col-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+.css-2kdvnl.cds-ProductCard-grid .cds-ProductCard-content {
+    position:  relative !important;
+    padding:  0px !important;
+  }
+
   .site-main{
    display:flex !important;
   }
@@ -252,7 +268,6 @@ position: fixed;
     max-width: 100% !important;
     padding: 0px 5px !important;
     margin: 3px auto !important;
-    height: 132px;
   }
 
   /* Ajuste a tarjetas */
@@ -291,10 +306,16 @@ position: fixed;
   max-height: 96px;
 }
 
-  /* Ajustar altura del contenedor de imagen */
+  /* Ajustar altura del contenedor de imagen POSTA*/
   .rc-CollectionsContainer{
     height: auto !important;
-    
+    background-color: #f4c183;
+    border-radius: 18px;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box;
+    padding: 10px; /* ajustá si querés más aire */
+    overflow: hidden;
   }
 
   /* Imagen dentro de la tarjeta, ajustada */
@@ -1549,7 +1570,7 @@ font-family:Helvetica now text !important;
   }
 
   .logo-responsive {
-    width: 80%;
+    width: 28% !important;
     height: auto;
     margin-bottom: 1rem;
   }
