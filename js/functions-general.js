@@ -189,6 +189,8 @@ function  DOMContentLoadedPOSTA() {
 			}
 			parent.removeChild(link);
 		});	
+
+		BuscadorProductos();
 	}
 
 

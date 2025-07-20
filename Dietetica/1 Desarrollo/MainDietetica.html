@@ -2867,7 +2867,6 @@ function gtag(){}gtag('js', new Date());
     });
   });
 
-
 async function cargarExcelYGuardar() {
   try {
     const res = await fetch("Recursos/MecohueDB.xlsx");
@@ -2877,20 +2876,78 @@ async function cargarExcelYGuardar() {
 
     const raw = XLSX.utils.sheet_to_json(hoja, { header: 1 }); // Leer como arrays
     let categoriaActual = "";
+    let modoIngredientes = false;
     const productos = [];
+    const ingredientesMixes = {};
 
     for (const row of raw) {
-      const colC = row[2]; // Columna C → Producto o Categoría
-      const colD = row[3]; // Columna D → Presentación
-      const colE = row[4]; // Columna E → Precio
+		//console.log("🔍 Fila cruda:", row);
 
-      // Si hay valor en C pero nada en D ni E → Categoría
+      // Fila textual para detectar "Mix de semillas:" aún si está en celdas fusionadas
+      const filaComoTexto = row.map(c => (c || "").toString().toUpperCase()).join(" ");
+      if (filaComoTexto.includes("MIX DE SEM")) {
+        modoIngredientes = true;
+        continue;
+      }
+
+	  // Detectar retorno a productos normales
+		if (modoIngredientes && row[2] && row[4]) {
+		modoIngredientes = false;
+		console.log("🔁 Desactivado modoIngredientes (vuelve a productos)");
+		}
+
+      const colC = row[2]; // Producto
+      const colD = row[3]; // Presentación
+      const colE = row[4]; // Precio
+      const colF = row[5]; // Ingredientes (para la parte de mixes)
+
+      // 🥜 Modo ingredientes activo
+if (modoIngredientes) {
+  const textoCrudo = (row[1] || "").toString().trim();
+
+if (!textoCrudo) {
+  continue;
+}
+
+
+  // Limpiar saltos de línea y comillas estilizadas
+  const textoLimpio = textoCrudo.replace(/["“”]+/g, '"').trim();
+
+  if (textoLimpio.includes(":")) {
+    // Caso normal con separador ":"
+    const partes = textoLimpio.split(":");
+    const nombreMix = partes[0].trim();
+    const ingredientes = partes.slice(1).join(":").replace(/[\r\n]+/g, " ").trim();
+
+    if (nombreMix && ingredientes) {
+      ingredientesMixes[nombreMix] = ingredientes;
+      console.log(`🥜 Guardado (con :) ${nombreMix}:`, ingredientes);
+    }
+  } else {
+    // Caso alternativo: intentar separar por salto de línea
+    const partes = textoLimpio.split(/[\r\n]+/);
+    const nombreMix = partes[0]?.trim();
+    const ingredientes = partes.slice(1).join(" ").trim();
+
+    if (nombreMix && ingredientes) {
+      ingredientesMixes[nombreMix] = ingredientes;
+      console.log(`🥜 Guardado (por salto de línea) ${nombreMix}:`, ingredientes);
+    } else {
+      console.warn("⚠️ No se pudo parsear mix sin ':' →", textoCrudo);
+    }
+  }
+
+  continue;
+}
+
+
+      // Detectar si es una categoría normal
       if (typeof colC === "string" && !colD && !colE) {
         categoriaActual = colC.trim();
         continue;
       }
 
-      // Si hay producto y precio → entrada válida
+      // Detectar producto normal
       if (colC && colE) {
         productos.push({
           categoria: categoriaActual,
@@ -2901,11 +2958,20 @@ async function cargarExcelYGuardar() {
       }
     }
 
-    console.log("✅ Productos procesados:", productos);
-    localStorage.setItem("productosMecohue", JSON.stringify(productos));
+console.log("✅ Productos procesados:", productos.length);
+console.log("🧾 Lista de productos:", productos);
+
+console.log("🥜 Ingredientes procesados:", Object.keys(ingredientesMixes).length);
+console.log("📋 Ingredientes por mix:", ingredientesMixes);
+
+
+localStorage.setItem("productosMecohue", JSON.stringify(productos));
+localStorage.setItem("ingredientesMixes", JSON.stringify(ingredientesMixes));
 
     const msg = document.createElement("div");
-    msg.innerHTML = `<p style="padding:1rem;color:green;">📦 ${productos.length} productos cargados al localStorage</p>`;
+    msg.innerHTML = `<p style="padding:1rem;color:green;">
+      📦 ${productos.length} productos + 🥜 ${Object.keys(ingredientesMixes).length} mixes con ingredientes cargados
+    </p>`;
     document.body.appendChild(msg);
 
   } catch (err) {
@@ -2916,4 +2982,5 @@ async function cargarExcelYGuardar() {
 
 document.addEventListener("DOMContentLoaded", cargarExcelYGuardar);
 </script>
+
 </body></html>

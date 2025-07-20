@@ -2749,6 +2749,8 @@ function gtag(){}gtag('js', new Date());
 <div id="content" class="site-content">
 	<div class="ast-container">
 
+<div class="widget-area secondary" id="secondary">
+</div>
 
 <div id="primary" class="content-area primary">
 </div>
@@ -2811,13 +2813,19 @@ function formatearPrecio(precioRaw) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   let subProducto="Mixes de Frutos de Autor";
-  let categoriaEnDB = "MIXES DE FRUTOS DE AUTOR"
+  let categoriaEnDB = "MIXES DE FRUTOS DE AUTOR";
   console.log("📍 mixes-frutos-autor.html iniciado");
 
   const primary = await esperarElemento("#primary");
   if (!primary) return console.error("❌ No se encontró #primary");
 
   // Paso 1: cargar filtros y productos en paralelo
+  const cargarFiltros = fetch("Granola-Filtros.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("secondary").innerHTML = data;
+      });
+
   const cargarProductos = fetch("mixes-frutos-autor-productos.html")
     .then(res => res.text())
     .then(data => {
@@ -2849,7 +2857,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             script2.src = "../../js/common-dietetica.js";
             script2.onload = () => {
               document.head.insertAdjacentHTML("beforeend", `
-                <link rel="stylesheet" href="../../css/common-productos-sinfiltros.css">
+                <link rel="stylesheet" href="../../css/common-productos-confiltros.css">
                 <link rel="stylesheet" href="../../css/whitePages.css">
               `);
 
@@ -2899,10 +2907,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 */
   	const categoria = categoriaEnDB;
 	//console.log(categoriaEnDB);
-const filtrados = productos.filter(p =>
-  p.categoria &&
-  p.categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(categoria)
-);
+  const filtrados = productos.filter(p =>
+    p.categoria &&
+    p.categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase() === categoria
+  );
 
   console.log(`🧠 ${filtrados.length} productos encontrados para "${categoria}"`);
 
@@ -2911,6 +2919,8 @@ const filtrados = productos.filter(p =>
     return;
   }
 
+  const ingredientesMixes = JSON.parse(localStorage.getItem("ingredientesMixes") || "{}");
+console.log(Object.keys(ingredientesMixes).length); 
   // 🛍️ Render personalizado
   filtrados.forEach((prod, i) => {
     const li = document.createElement("li");
@@ -2918,6 +2928,42 @@ const filtrados = productos.filter(p =>
 
     const precio = formatearPrecio(prod.precio);
     const imagen = "images/productos-generica.png";
+
+	    // Buscar si hay ingredientes por nombre exacto
+   
+		function normalizarTexto(txt) {
+  return txt.toLowerCase()
+            .replace(/["“”]/g, "")     // eliminar comillas
+            .normalize("NFD")          // quitar tildes
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+}
+
+// Buscar ingredientes por match parcial (al final)
+function normalizarTexto(txt) {
+  return txt.toLowerCase()
+            .replace(/["“”]/g, "")     // eliminar comillas
+            .normalize("NFD")          // quitar tildes
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+}
+
+let ingredientes = "";
+const nombreProdNorm = normalizarTexto(prod.producto);
+
+for (const claveMix in ingredientesMixes) {
+  const claveNorm = normalizarTexto(claveMix);
+
+  //console.log(ingredientesMixes); 
+
+  if (nombreProdNorm.endsWith(claveNorm) || claveNorm.endsWith(nombreProdNorm)) {
+    ingredientes = ingredientesMixes[claveMix];
+    break;
+  }
+}
+
+
+    const ingredientesTexto = ingredientes ? `${ingredientes}` : "";
 
     li.innerHTML = `
       <div class="astra-shop-thumbnail-wrap">
@@ -2928,8 +2974,9 @@ const filtrados = productos.filter(p =>
       <input type="hidden" class="wpmProductId" data-id="10000">
       <div class="astra-shop-summary-wrap">
         <span class="ast-woo-product-category">${subProducto}</span>
+		<h2 class="woocommerce-loop-product__title granolaProducto">${prod.producto}<br>${prod.presentacion?.toLowerCase() || ""}</h2>
         <a class="ast-loop-product__link"><h2 class="woocommerce-loop-product__title">
-  ${prod.producto}<br>${prod.presentacion?.toLowerCase() || ""}
+  ${ingredientesTexto}
 </h2></a>
         <span class="price">
           <div class="price">
