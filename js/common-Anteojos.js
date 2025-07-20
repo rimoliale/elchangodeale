@@ -5,7 +5,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 	
 	
 	
-const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la venta de productos cotidianos de forma personalzada hasta la llegada a su puerta, fundada y gestionada por Alejandro D Rimoli`;
+const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la venta de productos cotidianos, hasta la llegada a su destino, sin moverse de su casa, fundada y gestionada por Alejandro D. Rimoli`;
 
     // Aplicar como title (tooltip)
     const btnQuienesSomos = document.getElementById("InfoQuienesSomos-Barra");
@@ -22,7 +22,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 	
 	
 	
-		    const textoEnvio =`Se realiza el pedido mediante Whatsapp en el horario mencionado en la sección "Contacto".
+		    const textoEnvio =`Se realiza el pedido mediante Whatsapp al 1171104740. Con Horario de Atención: De 9 a 21hs.
 			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 				
 			Horario de Entrega: 
