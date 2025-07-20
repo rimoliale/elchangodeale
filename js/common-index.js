@@ -25,6 +25,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 		    const textoEnvio = `Se realiza el pedido mediante Whatsapp al 1171104740. Con Horario de Atención: De 9 a 21hs.
 			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 			
+
 			Tabaco:
 			Horario de Entrega: 
 			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs.	
@@ -67,7 +68,21 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
 			- Cualquier Mayor distancia a Consultar.			
-			- Compra mìnima: $28000.`
+			- Compra mìnima: $28000.
+      
+      
+      
+      Amteojos:
+      Horario de Entrega: 
+			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
+			
+			Desde el momento de confirmación de pedido, podrá coordinar el dia y hora de entrega para que llegue a su destino de forma inmediata, a partir del 6to día hábil.
+			
+			Alcance y Costo de Envio:
+			(Contando desde Estaciòn Banfield)
+			- Menos de 5km(50 cuadras) envío gratis. 
+			- Cualquier Mayor distancia a Consultar.			
+			- Compra mìnima: SIN lÍMITE.`
 
 
     // Aplicar como title (tooltip)

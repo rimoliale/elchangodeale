@@ -28,7 +28,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 			Horario de Entrega: 
 			Lunes a Viernes de 9 a 12hs y de 18hs a 21hs
 			
-			Desde el momento de confirmación de pedido, podrá coordinar el dia y hora de entrega para que llegue a su casa de forma inmediata, a partir del 6to día hábil.
+			Desde el momento de confirmación de pedido, podrá coordinar el dia y hora de entrega para que llegue a su destino de forma inmediata, a partir del 6to día hábil.
 			
 			Alcance y Costo de Envio:
 			(Contando desde Estaciòn Banfield)
