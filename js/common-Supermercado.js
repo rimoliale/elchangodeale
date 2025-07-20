@@ -34,7 +34,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
 			- Cualquier Mayor distancia a Consultar.			
-			- Compra mìnima: $28000.`
+			- Compra Mínima: $28000.`
 
 
     // Aplicar como title (tooltip)

@@ -40,7 +40,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) $5000. 
 			- Cualquier distancia Mayor a Consultar.
-			- Compra mìnima: SIN LÍMITE.
+			- Compra Mínima: SIN LÍMITE.
 			
 			
 			
@@ -54,7 +54,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
 			- Cualquier Mayor distancia Consultar.			
-			- Compra mìnima: SIN LÍMITE.
+			- Compra Mínima: SIN LÍMITE.
 
 
 
@@ -68,7 +68,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
 			- Cualquier Mayor distancia a Consultar.			
-			- Compra mìnima: $28000.
+			- Compra Mínima: $28000.
       
       
       
@@ -82,7 +82,7 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 			(Contando desde Estaciòn Banfield)
 			- Menos de 5km(50 cuadras) envío gratis. 
 			- Cualquier Mayor distancia a Consultar.			
-			- Compra mìnima: SIN lÍMITE.`
+			- Compra Mínima: SIN lÍMITE.`
 
 
     // Aplicar como title (tooltip)
