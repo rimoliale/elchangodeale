@@ -239,9 +239,8 @@ body:has(div#secondary) div#primary {
   }
   
   .woocommerce-page[class*=columns-] ul.products li.product:nth-child(n), .woocommerce[class*=columns-] ul.products li.product:nth-child(n) {
-  flex: 0 0 40%;                /* 👈 cada hijo ocupa 50% del ancho */
+  flex: 1 0 40%;                /* 👈 cada hijo ocupa 50% del ancho */
   box-sizing: border-box;      /* para que gap/margin no rompa el ancho */
-  width: 100% !important; 
 }
 
   .ast-woocommerce-container{

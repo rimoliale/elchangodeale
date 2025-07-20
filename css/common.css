@@ -71,6 +71,9 @@
 
 
 @media (max-width: 768px) {
+  .site-main{
+   display:flex !important;
+  }
 .css-1l9x38r{
    line-height:1.2em !important;
   }
