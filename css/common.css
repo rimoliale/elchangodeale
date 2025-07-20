@@ -490,11 +490,11 @@ padding-right:12px;
   display: block;
 }
 
-:has([value="Nuestras Promos Imbatibles"]:checked) .filters [for="All"] {
+:has([value="Nuestras Promos y Más Imbatibles"]:checked) .filters [for="All"] {
   background: #f4c183;
   color: white;
 }
-:has([value="Nuestras Promos Imbatibless"]:checked) .posts [data-category] {
+:has([value="Nuestras Promos y Más Imbatibless"]:checked) .posts [data-category] {
   display: block;
 }
 

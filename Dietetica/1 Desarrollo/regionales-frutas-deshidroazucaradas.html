@@ -2810,8 +2810,8 @@ function formatearPrecio(precioRaw) {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let subProducto="Regionales y Frutas Deshidroazucaradas";
-  let categoriaEnDB = "REGIONALES Y FRUTAS DESHIDROAZUCARADAS"
+  let subProducto="Dietética General";
+  let categoriaEnDB = "REGIO"
 
   console.log("📍 frutos-secos.html iniciado");
 
@@ -2901,10 +2901,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   	const categoria = categoriaEnDB;
 	//console.log(categoriaEnDB);
 
-  const filtrados = productos.filter(p =>
-    p.categoria &&
-    p.categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase() === categoria
-  );
+const filtrados = productos.filter(p =>
+  p.categoria &&
+  p.categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().includes(categoria)
+);
 
   console.log(`🧠 ${filtrados.length} productos encontrados para "${categoria}"`);
 
