@@ -1,4 +1,4 @@
-
+const tiempoInicio = performance.now();
 const rutaPDF = 'Recursos/BD/LIMPIEZA L2.pdf'; // archivo fijo
 
 (async function () {
@@ -68,7 +68,14 @@ const rutaPDF = 'Recursos/BD/LIMPIEZA L2.pdf'; // archivo fijo
       `;
 
       contenedor.appendChild(li);
+
+
+
+
     });
+
+    const tiempoFin = performance.now();
+console.log(`⏱️ Tiempo total render: ${(tiempoFin - tiempoInicio).toFixed(0)} ms`);
   }
 
 async function leerPDF() {

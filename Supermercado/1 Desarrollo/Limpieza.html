@@ -2859,9 +2859,9 @@ function gtag(){}gtag('js', new Date());
 						};
 						document.body.appendChild(script2);
 						
-						DOMContentLoadedPOSTA();
-						
-
+						setTimeout(() => {
+							DOMContentLoadedPOSTA();
+										}, 2000);
 					};
 					document.body.appendChild(script);
 				};

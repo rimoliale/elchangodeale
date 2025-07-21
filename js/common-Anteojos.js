@@ -22,7 +22,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 	
 	
 	
-		    const textoEnvio =`Se realiza el pedido mediante Whatsapp al 1171104740. Con Horario de Atención: De 9 a 21hs.
+		    const textoEnvio =`Se realiza el pedido mediante Whatsapp al 11 7110 4740  Con Horario de Atención: De 9 a 21hs.
 			Los pedidos confirmados serán programados y listos para su entrega, según corresponda el horario de armado de pedidos y proponga el cliente dentro del "Horario de Entrega".
 				
 			Horario de Entrega: 
@@ -72,7 +72,7 @@ const textoQuienesSomos = `El Chango de Ale se encarga de ofrecer al público la
 
 	
 	
-	const textoContacto = `- Nuestra via directa de compra y consultas es Whatsapp - 1171104740. 
+	const textoContacto = `- Nuestra via directa de compra y consultas es Whatsapp - 11 7110 4740  
 	- Horario de Atención: De 9 a 21hs.`;
 
 
