@@ -52,6 +52,26 @@ var productsCant = 0;
 var PrimerClickDeFiltro = true;
 
 function  DOMContentLoadedPOSTA() {
+
+//REEMPLAZADOR DE TITULOS DE SUBPRODUCTOS//------------------------------	
+  const archivo = window.location.pathname.split("/").pop().replace(".html", "");
+  const nombreFormateado = archivo.replace(/-/g, " ").toUpperCase();
+
+  const h1 = document.querySelector("h1.page-title.ast-archive-title");
+
+  if (h1) {
+    let texto = h1.textContent.trim();
+
+    if (texto.includes("*")) {
+      // Borra solo el asterisco (y espacios alrededor si los hay)
+      h1.textContent = texto.replace(/\s*\*\s*/, "").trim();
+    } else {
+      // Reemplaza por el nombre del archivo
+      h1.textContent = nombreFormateado;
+    }
+  }
+//------------------------------//REEMPLAZADOR DE TITULOS DE SUBPRODUCTOS//	
+
 	$(".woocommerce-result-count").text("Mostrando " + document.querySelectorAll('ul.products li.product').length + " de " + document.querySelectorAll('ul.products li.product').length + " Productos" );
 
 
@@ -190,6 +210,8 @@ function  DOMContentLoadedPOSTA() {
 			parent.removeChild(link);
 		});	
 
+
+		
 		BuscadorProductos();
 	}
 
