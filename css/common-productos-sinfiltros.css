@@ -249,7 +249,9 @@ font-size: small !important;
   }
 
 .ast-single-post .entry-title, .page-title{
-	font-size: 1.5rem !important;
+    font-size: 1.5rem !important;
+    padding: 0 32px 0 32px !important;
+    text-align: center !important;
   }
   
   .row col-12 mostrar-y-mas-content{
