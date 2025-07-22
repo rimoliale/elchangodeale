@@ -77,10 +77,9 @@
   }
 
 @media (max-width: 768px) {
-  .col-5, .col-7 {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
+
+  body:not(.logged-in){
+    top: 25px !important; /* altura del header, para que el contenido no quede tapado */
   }
 .css-2kdvnl.cds-ProductCard-grid .cds-ProductCard-content {
     position:  relative !important;
