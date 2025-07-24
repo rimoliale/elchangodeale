@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
   .elementor-social-icon:last-child  {
-    font-size: 8vh !important;
+    font-size: 1vh !important;
  }
   .woocommerce-js .woocommerce-result-count{
     text-align: center;
