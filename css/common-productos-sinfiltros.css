@@ -45,6 +45,9 @@ margin-bottom: 0px !important;
 }    
 
 @media (max-width: 768px) {
+    .elementor-social-icon .footer{
+    font-size: 13vh !important;
+ }
    .box{
   max-width: 100% !important;
   padding-right: 11vw !important;
