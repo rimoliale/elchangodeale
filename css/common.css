@@ -32,6 +32,16 @@
  }   
 
 @media (max-width: 768px) {
+  .elementor-social-icon:last-child  {
+    font-size: 8vh !important;
+ }
+  .woocommerce-js .woocommerce-result-count{
+    text-align: center;
+ }
+  .css-1dswftd{
+    padding-bottom: 4vh;
+    text-align: center;
+ }
   #main{
     padding-top: 4vh !important;
  }
