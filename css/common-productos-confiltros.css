@@ -66,6 +66,9 @@ padding: 3px 0 12px 0 !important;
 /*SOLO PARA TABACO*/
 
 @media (max-width: 768px) {
+  .woocommerce.archive ul.products li a.button{
+    font-size: 58%;
+ }
     .elementor-social-icon .footer{
     font-size: 13vh !important;
  }

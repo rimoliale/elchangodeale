@@ -41,7 +41,10 @@ span.woocommerce-Price-amount.amount{
    color: white !important;
    background-color:black !important;
   }
-@media (max-width: 768px) 
+@media (max-width: 768px) {
+#alg_wc_msrp > span.woocommerce-Price-amount.amount >bdi{
+  font-size: 4vw;
+}
 html, body{
     background-color: white !important;
   }
