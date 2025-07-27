@@ -36,13 +36,6 @@ body:has(div#secondary) div#primary {
 	justify-content: flex-end !important;
 	
   }
-  
-  #imgPrincipal{
-  width: 132% !important;
-  position: relative;
-  left: 54.5px;
-  max-width: none !important;
-}
 
 .ast-left-sidebar #primary{
   top: 0px !important;
@@ -344,14 +337,6 @@ flex: 1 1 50%;
   
   .logo-en-web{
 	align-content: center;
-  }
-  
-
-  
-  #imgPrincipal{
-    width: 32% !important;
-	height: auto !important;
-    left: 0%;
   }
   
   .filters{

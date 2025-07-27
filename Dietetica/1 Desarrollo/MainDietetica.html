@@ -3013,11 +3013,7 @@ console.log("📋 Ingredientes por mix:", ingredientesMixes);
 localStorage.setItem("productosMecohue", JSON.stringify(productos));
 localStorage.setItem("ingredientesMixes", JSON.stringify(ingredientesMixes));
 
-    const msg = document.createElement("div");
-    msg.innerHTML = `<p style="padding:1rem;color:green;">
-      📦 ${productos.length} productos + 🥜 ${Object.keys(ingredientesMixes).length} mixes con ingredientes cargados
-    </p>`;
-    document.body.appendChild(msg);
+
 
   } catch (err) {
     console.error("❌ Error al cargar Excel:", err);

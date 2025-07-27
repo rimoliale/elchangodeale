@@ -2838,7 +2838,7 @@ function gtag(){}gtag('js', new Date());
     // Paso 1: cargar filtros y productos en paralelo
 
 
-    const cargarProductos = fetch("MainSupermercado-Productos.html")
+    const cargarProductos = fetch("Promos-Productos.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("primary").innerHTML = data;
@@ -2868,9 +2868,8 @@ function gtag(){}gtag('js', new Date());
 				script.src = "../../js/functions-general.js";
 				script.onload = () => {
 				  const script2 = document.createElement("script");
-				  script2.src = "../../js/common-Supermercado.js";
+				  script2.src = "../../js/common.js";
 				  script2.onload = () => {
-					
 					const cssLink2 = document.createElement("link");
 					cssLink2.rel = "stylesheet";
 					cssLink2.href = "../../css/common-productos-sinfiltros.css";
@@ -2902,9 +2901,7 @@ function gtag(){}gtag('js', new Date());
 				  };
 				  document.body.appendChild(script2);
 				  
-				  						setTimeout(() => {
-							DOMContentLoadedPOSTA();
-										}, 2000);
+				  DOMContentLoadedPOSTA();
 				  
 
 				};
@@ -2917,4 +2914,8 @@ function gtag(){}gtag('js', new Date());
     });
   });
 </script>
+
+
+
+
 </body></html>

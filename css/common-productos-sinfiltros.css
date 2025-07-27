@@ -26,13 +26,6 @@ body:has(div#secondary) div#primary {
   border-left: 1px solid white;
 }
 
-#imgPrincipal{
-  width: 132% !important;
-  position: relative;
-  left: 54.5px;
-  max-width: none !important;
-}
-
 .row>*{
   padding: 3px 0 12px 0 !important;
 } 
@@ -272,12 +265,6 @@ width: 41.66666667% !important;
   
   .logo-en-web{
 	align-content: center;
-  }
-  
-  #imgPrincipal{
-    width: 32% !important;
-    height: auto !important;
-    left: 0%;
   }
   
   .filters{
