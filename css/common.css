@@ -30,8 +30,13 @@
  .woocommerce .ast-shop-toolbar-container{
     margin-bottom: 0em !important;
  }   
-
+/* .woocommerce img, .woocommerce-page img{
+      height: 12rem !important;
+ }    */
 @media (max-width: 768px) {
+/*   .woocommerce img, .woocommerce-page img{
+      height: 6rem !important;
+ }    */
   .elementor-social-icon:last-child  {
     font-size: 1vh !important;
  }
@@ -979,6 +984,13 @@ padding-left: 20px !important;
 }
   
 #imgPrincipal {
+  height: auto !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#img-wa{
+  height: auto !important;
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;

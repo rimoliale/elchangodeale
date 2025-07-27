@@ -26,6 +26,13 @@ body:has(div#secondary) div#primary {
   border-left: 1px solid white;
 }
 
+.logo-responsive{
+  width: 132% !important;
+  position: relative;
+  left: 54.5px;
+  max-width: none !important;
+}
+
 .row>*{
   padding: 3px 0 12px 0 !important;
 } 
@@ -283,6 +290,8 @@ width: 41.66666667% !important;
 }
 
 .logo-responsive{
+	left: 0px !important;
+  width: 32% !important;
 	margin-bottom: 0px !important;
 }
 .woocommerce ul.products, .woocommerce-page ul.products{

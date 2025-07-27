@@ -57,6 +57,12 @@ padding: 3px 0 12px 0 !important;
 	background: #82441e !important;
 }
 /*SOLO PARA TABACO*/
+.logo-responsive{
+  width: 132% !important;
+  position: relative;
+  left: 54.5px;
+  max-width: none !important;
+}
 
 @media (max-width: 768px) {
   .woocommerce.archive ul.products li a.button{
@@ -355,6 +361,8 @@ flex: 1 1 50%;
 }
 
 .logo-responsive{
+	left: 0px !important;
+  width: 32% !important;
 	margin-bottom: 0px !important;
 }
 
