@@ -6,11 +6,26 @@ const rutaPDF = 'Recursos/BD/GALLETITAS L2.pdf'; // archivo fijo
 
   function procesarTexto(texto) {
   const productos = [];
-  const regex = /(.+?)\s+(\d{3,6}\.\d{2})\s+-?\d+/g;
+  const regex = /(.+?)(?:\s*\(\d+\))?\s*(?:&&)?\s+(\d{3,6}\.\d{2})(?:\s+-?\d+)?/g
   let match;
 
   while ((match = regex.exec(texto)) !== null) {
-    const nombre = match[1].replace(/\s+&*$/, '').trim();
+    let nombre = match[1].trim();
+
+// 1. Eliminar todo lo que esté al final tipo (28)
+nombre = nombre.replace(/\s*\(\d+\)\s*$/, '');
+
+// 2. Eliminar "&&" al final si quedó
+nombre = nombre.replace(/\s*&&$/, '');
+
+// 3. Eliminar guiones finales tipo "--"
+nombre = nombre.replace(/[-–]+$/, '');
+
+// 4. Eliminar espacios duplicados
+nombre = nombre.replace(/\s{2,}/g, ' ');
+
+// 5. Eliminar "X" final si no tiene número
+nombre = nombre.replace(/\s+X\s*$/, '');
 /* 
       let ok;
       ok=false;

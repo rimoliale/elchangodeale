@@ -1,24 +1,35 @@
 const tiempoInicio = performance.now();
 const rutaPDF = 'Recursos/BD/GOLOSINAS L2.pdf'; // archivo fijo
+const subCategoria = "Golosinas";
 
 (async function () {
   const imagenDefault = 'images/Golosinas-2.jpg';
 
   function procesarTexto(texto) {
   const productos = [];
-  const regex = /(.+?)\s+(\d{3,6}\.\d{2})\s+-?\d+/g;
+  const regex = /(.+?)(?:\s*\(\d+\))?\s*(?:&&)?\s+(\d{3,6}\.\d{2})(?:\s+-?\d+)?/g
+
+
   let match;
 
   while ((match = regex.exec(texto)) !== null) {
-    const nombre = match[1].replace(/\s+&*$/, '').trim();
-/* 
-      let ok;
-      ok=false;
-      if (ok==false) {
-        ok=true;
-        console.log(match[2]);
+let nombre = match[1].trim();
 
-      }  */
+// 1. Eliminar todo lo que esté al final tipo (28)
+nombre = nombre.replace(/\s*\(\d+\)\s*$/, '');
+
+// 2. Eliminar "&&" al final si quedó
+nombre = nombre.replace(/\s*&&$/, '');
+
+// 3. Eliminar guiones finales tipo "--"
+nombre = nombre.replace(/[-–]+$/, '');
+
+// 4. Eliminar espacios duplicados
+nombre = nombre.replace(/\s{2,}/g, ' ');
+
+// 5. Eliminar "X" final si no tiene número
+nombre = nombre.replace(/\s+X\s*$/, '');
+
 
     const precio = parseFloat(match[2]); // Ej: "1170.00" → 1170
 
@@ -51,7 +62,7 @@ const rutaPDF = 'Recursos/BD/GOLOSINAS L2.pdf'; // archivo fijo
         </div>
         <input type="hidden" class="wpmProductId" data-id="${13000 + idx}">
         <div class="astra-shop-summary-wrap">
-          <span class="ast-woo-product-category">Limpieza</span>
+          <span class="ast-woo-product-category">${subCategoria}</span>
           <a class="ast-loop-product__link"><h2 class="woocommerce-loop-product__title">${p.nombre}</h2></a>
           <span class="price">
             <div class="price">
@@ -84,7 +95,7 @@ async function leerPDF() {
       texto += content.items.map(i => i.str).join(' ') + '\n';
     }
 
-    // Cortar desde donde empieza "LIMPIEZA"
+    // Cortar desde donde empieza "GOLOSINAS"
     const inicio = texto.indexOf('GOLOSINAS');
     if (inicio > -1) {
       texto = texto.slice(inicio);
