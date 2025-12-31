@@ -25,11 +25,13 @@ body:has(div#secondary) div#primary {
   .sidebar-head{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
+	font-size: small;
   }
     input#checkedDeseleccionar{
-	align-items: flex-end !important;
-    justify-content: center !important;
+	align-items: flex-start !important;
+    justify-content: top !important;
 	transform: scale(1.5) !important;
+	top: 0vh;
   }
   
     .search{
@@ -44,7 +46,7 @@ body:has(div#secondary) div#primary {
   border-left: 1px solid white;
 }
 .row>*{
-padding: 3px 0 12px 0 !important;
+padding: 3px 0 0px 0 !important;
 }
     .box{
   max-width: 100% !important;
@@ -52,15 +54,16 @@ padding: 3px 0 12px 0 !important;
   padding-left: 0px !important;
   display: contents;
  } 
-/*SOLO PARA TABACO*/
+
 .filters a:hover{
 	background: #82441e !important;
 }
-/*SOLO PARA TABACO*/
+
 .logo-responsive{
-  width: 132% !important;
+  width: 9vw !important;
+  height: auto !important;
   position: relative;
-  left: 54.5px;
+  /*left: 54.5px;*/
   max-width: none !important;
 }
 

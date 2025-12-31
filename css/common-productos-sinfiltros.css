@@ -27,9 +27,10 @@ body:has(div#secondary) div#primary {
 }
 
 .logo-responsive{
-  width: 132% !important;
+  width: 9vw !important;
+  height: auto !important;
   position: relative;
-  left: 54.5px;
+  /*left: 54.5px;*/
   max-width: none !important;
 }
 
